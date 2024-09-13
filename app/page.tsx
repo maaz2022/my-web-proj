@@ -1,4 +1,4 @@
-import StarterPage from "@/components/StarterPage";
+import StarterPage from "@/Components/StarterPage";
 
 
 export default function Home() {
