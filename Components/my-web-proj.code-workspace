@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "my-web-proj",
+			"path": ".."
+		},
+		{
+			"name": "Components",
+			"path": "../../linear/Components"
+		}
+	],
+	"settings": {}
+}
