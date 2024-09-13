@@ -25,3 +25,16 @@ body {
     text-wrap: balance;
   }
 }
+.rotate-3d {
+  transform: rotateX(60deg) rotateY(190deg) rotateZ(55deg);
+  transition: transform 0.5s ease;
+}
+
+.rotate-3d-hover:hover {
+  transform: rotateX(10deg) rotateY(180deg);
+}
+
+.shadow-3d {
+  box-shadow: 90px 90px 50px rgba(85, 83, 83, 0.4);
+  /* Creates a deep shadow */
+}
