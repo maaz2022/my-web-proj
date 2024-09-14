@@ -1,6 +1,6 @@
 'use client';
 import { User, FolderHeart, Lightbulb, BookOpen, Phone, Home, ChevronLeft, ChevronRight } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useState } from 'react';  
 import { motion } from 'framer-motion'; 
 import About from './About';
 import Blog from './Blog';
@@ -17,12 +17,13 @@ const SideBar = () => {
   const handleSectionClick = (section: string) => {
     setActiveSection(section);
   };
+
   return (
     <>
       {/* Sidebar */}
       <motion.div
         animate={{ width: collapsed ? 80 : 240 }} 
-        className="fixed top-0 z-50 flex flex-col bg-gradient-to-b from-[#87aacf] to-[#051766] h-screen items-center overflow-hidden shadow-lg"
+        className="fixed top-0 z-50 flex flex-col bg-gradient-to-b from-[#a2c6d1] to-[#051766] h-screen items-center overflow-hidden shadow-lg"
       >
         {/* Collapse/Expand Button */}
         <button
@@ -104,7 +105,8 @@ const SideBar = () => {
       </motion.div>
 
       {/* Main content */}
-      <div className={`fixed w-screen ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} mt-20 transition-all duration-500 overflow-x-hidden`}>
+      {/* <div className={`fixed  w-screen h-screen overflow-y-auto ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} mt-20 transition-all duration-500`}> */}
+      <div className={`fixed left-0 top-0 bottom-0 overflow-y-auto bg-white w-full transition-all duration-500 ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} pt-20`}>
         {activeSection === 'about' && <About />}
         {activeSection === 'resume' && <Resume />}
         {activeSection === 'portfolio' && <Portfolio />}
