@@ -2,13 +2,14 @@
 import { User, FolderHeart, Lightbulb, BookOpen, Phone, Home, ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';  
 import { motion } from 'framer-motion'; 
-import About from './About';
+
 import Blog from './Blog';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
 import Link from 'next/link';
 import Image from 'next/image';
 import Contact from './Contact';
+import About from './About';
 
 const SideBar = () => {
   const [activeSection, setActiveSection] = useState<string | null>('about'); 
@@ -23,12 +24,12 @@ const SideBar = () => {
       {/* Sidebar */}
       <motion.div
         animate={{ width: collapsed ? 80 : 240 }} 
-        className="fixed top-0 z-50 flex flex-col bg-gradient-to-b from-[#a2c6d1] to-[#051766] h-screen items-center overflow-hidden shadow-lg"
+        className="fixed top-0 left-0 z-50 flex flex-col bg-gradient-to-b bg-[#051766] h-screen items-center overflow-hidden shadow-lg"
       >
         {/* Collapse/Expand Button */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="mt-6 p-2 bg-blue-600 rounded-full text-white hover:bg-blue-700 transition-all duration-300"
+          className="mt-6 p-2 bg-white rounded-full text-[#051766] hover:bg-blue-700 transition-all duration-300"
         >
           {collapsed ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
         </button>
@@ -36,7 +37,7 @@ const SideBar = () => {
         {/* Logo (only visible if not collapsed) */}
         {!collapsed && (
           <div className="mt-6">
-            <Image src="/mylogo.png" alt="Profile Picture" width={300} height={300} className="rounded-full shadow-md" />
+            <Image src="/mlogo.png" alt="Profile Picture" width={300} height={300} className="" />
           </div>
         )}
 
@@ -49,7 +50,7 @@ const SideBar = () => {
             } hover:text-white`}
           >
             <User size={24} />
-            {!collapsed && <span className="text-base">About</span>} {/* Text hidden when collapsed */}
+            {!collapsed && <span className="text-base">About</span>}
           </button>
 
           <button
@@ -59,7 +60,7 @@ const SideBar = () => {
             } hover:text-white`}
           >
             <FolderHeart size={24} />
-            {!collapsed && <span className="text-base">Resume</span>} {/* Text hidden when collapsed */}
+            {!collapsed && <span className="text-base">Resume</span>}
           </button>
 
           <button
@@ -69,7 +70,7 @@ const SideBar = () => {
             } hover:text-white`}
           >
             <Lightbulb size={24} />
-            {!collapsed && <span className="text-base">Portfolio</span>} {/* Text hidden when collapsed */}
+            {!collapsed && <span className="text-base">Portfolio</span>}
           </button>
 
           <button
@@ -79,7 +80,7 @@ const SideBar = () => {
             } hover:text-white`}
           >
             <BookOpen size={24} />
-            {!collapsed && <span className="text-base">Blog</span>} {/* Text hidden when collapsed */}
+            {!collapsed && <span className="text-base">Blog</span>}
           </button>
 
           <button
@@ -89,7 +90,7 @@ const SideBar = () => {
             } hover:text-white`}
           >
             <Phone size={24} />
-            {!collapsed && <span className="text-base">Contact</span>} {/* Text hidden when collapsed */}
+            {!collapsed && <span className="text-base">Contact</span>}
           </button>
 
           <button>
@@ -98,15 +99,14 @@ const SideBar = () => {
                 size={24}
                 className={`inline ${activeSection === 'home' ? 'text-white font-semibold' : ''}`}
               />
-              {!collapsed && <span className="text-base ml-3">Home</span>} {/* Text hidden when collapsed */}
+              {!collapsed && <span className="text-base ml-3">Home</span>}
             </Link>
           </button>
         </div>
       </motion.div>
 
       {/* Main content */}
-      {/* <div className={`fixed  w-screen h-screen overflow-y-auto ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} mt-20 transition-all duration-500`}> */}
-      <div className={`fixed left-0 top-0 bottom-0 overflow-y-auto bg-white w-full transition-all duration-500 ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} pt-20`}>
+      <div className={`top-0 bottom-0 right-0 overflow-y-auto transition-all duration-500 ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} pt-20`}>
         {activeSection === 'about' && <About />}
         {activeSection === 'resume' && <Resume />}
         {activeSection === 'portfolio' && <Portfolio />}
