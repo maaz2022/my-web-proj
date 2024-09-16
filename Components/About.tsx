@@ -105,7 +105,7 @@ const About = () => {
               className="p-6 flex flex-col items-center text-center space-y-4 bg-white shadow-lg rounded-lg"
               whileHover={{ scale: 1.05 }}
             >
-              <img src={service.icon} alt={service.title} className="w-16 h-16" />
+              <Image src={service.icon} alt={service.title} className="w-16 h-16" />
               <h2 className="text-xl font-bold text-gray-800">{service.title}</h2>
               <p className="text-gray-600">{service.description}</p>
             </motion.div>
@@ -119,7 +119,7 @@ const About = () => {
         <motion.div className="grid grid-cols-2 sm:grid-cols-3 gap-10 max-w-5xl" variants={slideUp}>
           {workProcesses.map((work, index) => (
             <motion.div key={index} className="flex flex-col items-center text-center space-y-4">
-              <img src={work.icon} alt={work.title} className="w-16 h-16" />
+              <Image src={work.icon} alt={work.title} className="w-16 h-16" />
               <h3 className="text-lg font-semibold text-gray-800">{work.title}</h3>
             </motion.div>
           ))}
@@ -144,7 +144,7 @@ const About = () => {
         <motion.div className="flex justify-center items-center gap-24 text-center" variants={slideUp}>
           {hobbies.map((hobby, index) => (
             <motion.div key={index} className="flex items-center flex-col space-y-3" whileHover={{ scale: 1.1 }}>
-              <img src={hobby.icon} alt={hobby.title} className="w-16 h-16" />
+              <Image src={hobby.icon} alt={hobby.title} className="w-16 h-16" />
               <h3 className="text-lg font-semibold text-gray-800">{hobby.title}</h3>
             </motion.div>
           ))}

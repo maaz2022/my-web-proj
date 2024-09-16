@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins, Luckiest_Guy } from "next/font/google";
+import { Luckiest_Guy } from "next/font/google";
 import "./globals.css";
-// const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "800"] });
-const LuckiestGuy   = Luckiest_Guy({ subsets: ["latin"], variable:"--font-luckiest-guy",weight: ["400"] });
+const LuckiestGuy = Luckiest_Guy({ subsets: ["latin"], variable:"--font-luckiest-guy",weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Muhammad Maaz",
