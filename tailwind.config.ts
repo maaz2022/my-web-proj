@@ -1,3 +1,4 @@
+import { Luckiest_Guy } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,6 +13,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         myBlue: "#032668",
+      },
+      fontFamily: {
+        LuckiestGuy: ["var(--font-luckiest-guy)"],
       },
     },
   },

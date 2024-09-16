@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
+
 
 const About = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -63,33 +65,40 @@ const About = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation variants for fade-in
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.6 } }
   };
 
-  // Animation variants for slide-up
   const slideUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
   };
+
+  const [text] = useTypewriter({
+    words: ['React.js Developer', 'SQL Database Expert', 'Web App Enthusiast','Next.js Developer'],
+    loop: true,
+    delaySpeed: 2000,
+  });
 
   return (
     <motion.section initial="hidden" animate="visible">
       {/* Services Section */}
       <motion.div className="p-10 flex justify-center items-center flex-col space-y-10" variants={fadeIn}>
         <h1 className="text-[#032668] text-5xl font-semibold">About Me</h1>
-        <p className="text-myBlue border-b-4 border-myBlue ">Services</p>
+        <h1 className='text-3xl '>HI, My name is <span className='font-LuckiestGuy text-blue-900'>Muhammad Maaz</span></h1>
+        <h2 className="text-xl font-semibold text-myBlue mt-4">{text}<Cursor /></h2>
+        <p className="text-myBlue border-b-4 border-myBlue font-LuckiestGuy">Services</p>
       </motion.div>
 
+      {/* Services Grid */}
       <motion.div
         className="w-full h-full flex flex-col items-center justify-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-5xl cursor-pointer" variants={slideUp} >
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-5xl cursor-pointer" variants={slideUp}>
           {myServices.map((service, index) => (
             <motion.div
               key={index}
@@ -106,7 +115,7 @@ const About = () => {
 
       {/* Work Process Section */}
       <motion.div className="mt-10 p-10 flex justify-center items-center flex-col space-y-10 bg-blue-50" variants={fadeIn}>
-        <p className="text-myBlue border-b-4 border-myBlue">Work Process</p>
+        <p className="text-myBlue border-b-4 border-myBlue font-LuckiestGuy">Work Process</p>
         <motion.div className="grid grid-cols-2 sm:grid-cols-3 gap-10 max-w-5xl" variants={slideUp}>
           {workProcesses.map((work, index) => (
             <motion.div key={index} className="flex flex-col items-center text-center space-y-4">
@@ -119,7 +128,7 @@ const About = () => {
 
       {/* Proud To Work With */}
       <motion.div className="mt-10 p-10 flex justify-center items-center flex-col space-y-10" variants={fadeIn}>
-        <p className="text-myBlue border-b-4 border-myBlue">Proud To Work With</p>
+        <p className="text-myBlue border-b-4 border-myBlue font-LuckiestGuy">Proud To Work With</p>
         <Image
           src='/scripter.png'
           alt='Scripter Logo'
@@ -131,7 +140,7 @@ const About = () => {
 
       {/* Fun Fact Section */}
       <motion.div className="mt-10 p-10 flex justify-center items-center flex-col space-y-10 bg-blue-50 cursor-pointer" variants={fadeIn}>
-        <p className="text-myBlue border-b-4 border-myBlue">Fun Fact</p>
+        <p className="text-myBlue border-b-4 border-myBlue font-LuckiestGuy">Fun Fact</p>
         <motion.div className="flex justify-center items-center gap-24 text-center" variants={slideUp}>
           {hobbies.map((hobby, index) => (
             <motion.div key={index} className="flex items-center flex-col space-y-3" whileHover={{ scale: 1.1 }}>
@@ -155,7 +164,7 @@ const About = () => {
       )}
 
       <motion.div className='flex justify-center items-center mt-4 h-24'>
-        <p className='text-myBlue'>Copyright @ 2024 By  <span className='text-myBlue font-bold'>Muhamad Maaz</span></p>
+        <p className='text-myBlue'>Copyright @ 2024 By <span className='text-myBlue font-bold'>Muhammad Maaz</span></p>
       </motion.div>
     </motion.section>
   );
