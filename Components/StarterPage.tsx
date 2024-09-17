@@ -93,6 +93,12 @@ const StarterPage = () => {
             >
               ×
             </button>
+            <Link
+              href='/Discover'
+              className=" absolute -bottom-40 left-72 group  inline-block px-8 py-4 border-2 bg-[#032668] hover:bg-blue-900 text-white text-[13px] font-semibold ml-2 overflow-hidden"
+            >
+                Discover
+            </Link>
           </div>
         </div>
       )}

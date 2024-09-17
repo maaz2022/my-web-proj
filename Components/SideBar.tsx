@@ -1,10 +1,10 @@
 'use client';
-import { User, FolderHeart, Lightbulb, BookOpen, Phone, Home, ChevronLeft, ChevronRight } from 'lucide-react';
+import { User, FolderHeart, BookOpen, Phone, Home, ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';  
 import { motion } from 'framer-motion'; 
 
 import Blog from './Blog';
-import Portfolio from './Portfolio';
+
 import Resume from './Resume';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -63,7 +63,7 @@ const SideBar = () => {
             {!collapsed && <span className="text-base">Resume</span>}
           </button>
 
-          <button
+          {/* <button
             onClick={() => handleSectionClick('portfolio')}
             className={`flex items-center space-x-3 transition-all duration-300 ${
               activeSection === 'portfolio' ? 'text-white font-semibold' : 'text-gray-400'
@@ -71,7 +71,7 @@ const SideBar = () => {
           >
             <Lightbulb size={24} />
             {!collapsed && <span className="text-base">Portfolio</span>}
-          </button>
+          </button> */}
 
           <button
             onClick={() => handleSectionClick('blog')}
@@ -109,7 +109,7 @@ const SideBar = () => {
       <div className={`top-0 bottom-0 right-0 overflow-y-auto transition-all duration-500 ${collapsed ? 'ml-[80px]' : 'ml-[240px]'} pt-20`}>
         {activeSection === 'about' && <About />}
         {activeSection === 'resume' && <Resume />}
-        {activeSection === 'portfolio' && <Portfolio />}
+        {/* {activeSection === 'portfolio' && <Portfolio />} */}
         {activeSection === 'blog' && <Blog />}
         {activeSection === 'contact' && <Contact />}
       </div>
