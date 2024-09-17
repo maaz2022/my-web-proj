@@ -237,5 +237,29 @@ export const projects = [
         name: 'Console Based VCS',
         description: 'Built a Version control system in which you can perform all basic operations as you perform on GitHub',
         link: 'https://github.com/maaz2022/VCS',
+    },
+        {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'Nexcent Frontend',
+        description: 'Frontend for the agency',
+        link: 'https://nexcent-frontend.vercel.app/',
+    }
+    ,
+        {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: '3D Work',
+        description: '3D Portfolio website',
+        link: 'https://muhammadmaaz.vercel.app/',
+    }
+       ,
+        {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'Portfolio',
+        description: 'Another 3D Portfolio website',
+        link: 'https://muhammadmaazportfolio.vercel.app/',
     }
 ];
+

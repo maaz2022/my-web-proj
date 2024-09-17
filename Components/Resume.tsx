@@ -51,14 +51,14 @@ const Resume = () => {
 
             {/* Experience and Image Section */}
             <motion.div
-                className="flex flex-col lg:flex-row lg:items-start lg:justify-between mt-10 gap-6 bg-blue-50 p-10"
+                className="flex flex-col lg:flex-row lg:items-start lg:justify-between mt-10 gap-6  p-10"
                 variants={slideUp}
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
             >
                 {/* Experience Details */}
-                <div className="lg:w-2/3">
+                <div className="lg:w-1/2 ">
                     <motion.div
                         className="border-l-4 border-[#032668] pl-6 ml-20"
                         variants={slideUp}
@@ -115,7 +115,7 @@ const Resume = () => {
 
                 {/* Image */}
                 <motion.div
-                    className="lg:w-1/3 flex items-center justify-center"
+                    className="lg:w-1/2 flex items-center justify-center"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
@@ -123,8 +123,8 @@ const Resume = () => {
                     <Image
                         src='/laptop.png'
                         alt='laptop'
-                        width={500}
-                        height={500}
+                        width={600}
+                        height={600}
                         className="object-contain"
                     />
                 </motion.div>
@@ -141,10 +141,10 @@ const Resume = () => {
             </div>
 
             {/* Skills Section */}
-            <div className='py-10 flex flex-col justify-center items-center bg-blue-50'>
+            <div className='py-10 flex flex-col justify-center items-center '>
                 <p className="text-myBlue border-b-4 border-myBlue font-LuckiestGuy">My Skills</p>
                 <motion.div
-                    className='mt-16 flex flex-wrap justify-center gap-12'
+                    className='container mt-16 flex flex-wrap justify-center gap-12'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
@@ -152,7 +152,7 @@ const Resume = () => {
                     {skills.map((skill, index) => (
                         <motion.div
                             key={index}
-                            className='block-container w-20 h-20 px-20'
+                            className='block-container w-20 h-20 '
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -171,7 +171,7 @@ const Resume = () => {
                 
             </div>
         
-            {showScrollTop && (
+            {/* {showScrollTop && ( */}
                 <motion.button
                     onClick={handleScrollTop}
                     className="fixed bottom-10 right-10 bg-myBlue text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 "
@@ -180,7 +180,7 @@ const Resume = () => {
                 >
                     Back To Top
                 </motion.button>
-            )}
+            {/* )} */}
 
             <motion.div className='flex justify-center items-center mt-4 h-24'>
                 <p className='text-myBlue'>Copyright @ 2024 By <span className='text-myBlue font-bold'>Muhammad Maaz</span></p>

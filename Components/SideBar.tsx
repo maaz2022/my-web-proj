@@ -3,13 +3,14 @@ import { User, FolderHeart, BookOpen, Phone, Home, ChevronLeft, ChevronRight } f
 import React, { useState } from 'react';  
 import { motion } from 'framer-motion'; 
 
-import Blog from './Blog';
+
 
 import Resume from './Resume';
 import Link from 'next/link';
 import Image from 'next/image';
 import Contact from './Contact';
 import About from './About';
+import Project from './Project';
 
 const SideBar = () => {
   const [activeSection, setActiveSection] = useState<string | null>('about'); 
@@ -74,13 +75,13 @@ const SideBar = () => {
           </button> */}
 
           <button
-            onClick={() => handleSectionClick('blog')}
+            onClick={() => handleSectionClick('Project')}
             className={`flex items-center space-x-3 transition-all duration-300 ${
-              activeSection === 'blog' ? 'text-white font-semibold' : 'text-gray-400'
+              activeSection === 'Project' ? 'text-white font-semibold' : 'text-gray-400'
             } hover:text-white`}
           >
             <BookOpen size={24} />
-            {!collapsed && <span className="text-base">Blog</span>}
+            {!collapsed && <span className="text-base">Projects</span>}
           </button>
 
           <button
@@ -110,7 +111,7 @@ const SideBar = () => {
         {activeSection === 'about' && <About />}
         {activeSection === 'resume' && <Resume />}
         {/* {activeSection === 'portfolio' && <Portfolio />} */}
-        {activeSection === 'blog' && <Blog />}
+        {activeSection === 'Project' && <Project />}
         {activeSection === 'contact' && <Contact />}
       </div>
     </>
